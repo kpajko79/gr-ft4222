@@ -1,0 +1,33 @@
+id: pyft4222_source
+label: PYFT4222 Source
+category: '[ft4222]'
+flags: [python, throttle]
+
+templates:
+  imports: from gnuradio import ft4222
+  make: ft4222.pyft4222_source(${samp_rate}, '${source_type.val}', ${source_type.len})
+
+parameters:
+- id: source_type
+  label: "IO Type"
+  dtype: enum
+  options: [ST_FLOAT, ST_COMPLEX, ST_SHORT, ST_SC16]
+  option_labels: [float, complex, Int16, Complex Int16]
+  option_attributes:
+    val: [float, complex, short, short]
+    len: [1, 1, 1, 2]
+  hide: none
+  default: ST_COMPLEX
+- id: samp_rate
+  label: "Sample rate"
+  dtype: int
+  default: 'int(samp_rate)'
+  hide: none
+
+outputs:
+- label: out
+  domain: stream
+  dtype: ${source_type.val}
+  vlen: ${source_type.len}
+
+file_format: 1

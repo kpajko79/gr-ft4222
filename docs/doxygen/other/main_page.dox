@@ -1,0 +1,10 @@
+/*! \mainpage
+
+Welcome to the GNU Radio FT4222 Block
+
+This is the intro page for the Doxygen manual generated for the FT4222
+block (docs/doxygen/other/main_page.dox). Edit it to add more detailed
+documentation about the new GNU Radio modules contained in this
+project.
+
+*/
